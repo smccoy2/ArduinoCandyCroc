@@ -9,6 +9,4 @@ Based on a tutorial found @ https://www.instructables.com/Crocodile-That-Opens-a
 
 <br />
 The tutorial can help with the cardboard construction but needs working code.
-
-<br />
 ![image](https://github.com/user-attachments/assets/c01ceb11-0f6d-4353-8cbb-c286fc6c0c04)
