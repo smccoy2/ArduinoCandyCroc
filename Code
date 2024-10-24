@@ -1,0 +1,58 @@
+#include <Servo.h>
+
+// Define pins for the ultrasonic sensor
+const int trigPin = 9;
+const int echoPin = 10;
+
+// Define the servo pin
+const int servoPin = 11;
+
+// Create a servo object
+Servo myServo;
+
+// Variables to store the distance
+long duration;
+int distance;
+
+void setup() {
+  // Initialize serial communication for debugging
+  Serial.begin(9600);
+  
+  // Set the trigPin as an output and the echoPin as an input
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  
+  // Attach the servo to the servo pin
+  myServo.attach(servoPin);
+  
+  // Set the initial position of the servo (starting position)
+  myServo.write(0); // Servo in reset (starting) position
+}
+
+void loop() {
+  // Send a trigger signal to the ultrasonic sensor
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  
+  // Read the echo signal
+  duration = pulseIn(echoPin, HIGH);
+  
+  // Calculate the distance in centimeters
+  distance = duration * 0.034 / 2;
+  
+  // Print the distance for debugging
+  Serial.print("Distance: ");
+  Serial.println(distance);
+  
+  // If the obstacle is within 20 cm, pull the fishing wire
+  if (distance <= 20) {
+    myServo.write(180); // Pull the fishing wire (rotate fully to pull)
+    delay(2000); // Hold the pulled position for 2 seconds
+    myServo.write(0);  // Automatically reset the servo after 2 seconds
+  }
+
+  delay(500); // Small delay to avoid rapid movement
+}
