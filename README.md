@@ -10,6 +10,4 @@ The tutorial can help with the cardboard construction but needs working code.
 
 <br/>
 Circuit:  
-![image](https://github.com/user-attachments/assets/39a8547a-298f-42f8-a0b9-cb2db7757398)
-
-
+![circuitcroc](https://github.com/user-attachments/assets/09c0cf4d-b5d9-44d7-94e9-22298daa32ea)
