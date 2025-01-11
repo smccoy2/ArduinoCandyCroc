@@ -1,5 +1,6 @@
 # ArduinoCandyCroc
 
+![Candy Croc](https://github.com/user-attachments/assets/f034016d-5122-4775-94d4-1baeccc721a3)
 
 This is the code for an Arduino crocodile project that will shut its mouth using fishing wire 
 pulled by a servo that is connected to an ultrasonic motion sensor
